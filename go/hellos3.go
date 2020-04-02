@@ -18,6 +18,10 @@ func main() {
 		return
 	}
 
+	if len(resp.Buckets) == 0 {
+		fmt.Printf("Error: No buckets found")
+		return
+	}
 	bucket := resp.Buckets[0]
 
 	input := s3.ListObjectsInput{
